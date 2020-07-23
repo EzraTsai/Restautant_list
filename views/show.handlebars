@@ -3,6 +3,17 @@
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-10 mx-auto">
+      <div>
+        <a href="/restaurants/{{restaurant._id}}/edit">
+          <button class="btn btn-success" type="submit">修改</button>
+        </a>
+        <form action="/restaurants/{{restaurant._id}}/delete" method="POST" style="display: inline;">
+          <button type="submit" class="btn btn-success">刪除</button>
+        </form>
+        <a href="/">
+          <button class="btn btn-success" type="submit">返回</button>
+        </a>
+      </div>
 
       <p class="mb-1">
         <span class="text-secondary">
@@ -35,7 +46,8 @@
         {{restaurant.description}}
       </p>
 
-      <img class="rounded mx-auto d-block mb-4 w-100" src="{{restaurant.image}}" alt="{{restaurant.name}}" style="max-width: 600px;">
+      <img class="rounded mx-auto d-block mb-4 w-100" src="{{restaurant.image}}" alt="{{restaurant.name}}"
+        style="max-width: 600px;">
     </div>
   </div>
 </div>
