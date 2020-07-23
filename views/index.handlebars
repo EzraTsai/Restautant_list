@@ -1,14 +1,13 @@
 <!-- ./views/index.handlebars -->
-<div class="container mt-5"></div>
-
 <!-- search bar -->
-<div class="container search-bar">
-  <div class="search-bar-outer">
+<div class="container search-bar d-flex bd-highlight">
+  <div class="search-bar-outer p-2 w-100 bd-highlight col-md-10 col-12 mx-auto">
     <div class="search-bar-inner">
       <form action="/search">
         <h4 class="mb-2">尋找餐廳：</h4>
         <div class="input-group">
-          <input type="text" name="keyword" class="form-control" placeholder="輸入餐廳、分類" aria-label="Restaurant Name..." value="{{keyword}}" aria-describedby="search-button">
+          <input type="text" name="keyword" class="form-control" placeholder="輸入餐廳、分類" aria-label="Restaurant Name..."
+            value="{{keyword}}" aria-describedby="search-button">
           <div class="input-group-append">
             <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
           </div>
@@ -16,10 +15,15 @@
       </form>
     </div>
   </div>
+  <div class="p-2 flex-shrink-1 bd-highlight">
+    <a href="./restaurants/new">
+      <button class="btn btn-success" type="submit">建立餐廳</button>
+    </a>
+  </div>
 </div>
 
 <!-- restaurant list -->
-<div class="container mt-5">
+<div class="container mt-3">
   <div class="row">
     <div class="col-md-10 col-12 mx-auto">
       <div class="card-columns">
