@@ -4,8 +4,7 @@ const app = express()
 const port = 3000
 
 const mongoose = require('mongoose') // 載入 mongoose
-mongoose.connect('mongodb://localhost/todo-list', { useNewUrlParser: true, useUnifiedTopology: true }) // 設定連線到 mongoDB
-
+mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true }) // 設定連線到 mongoDB
 // require express-handlebars here
 const exphbs = require('express-handlebars')
 //require 
