@@ -44,10 +44,34 @@
               </span>
             </div>
             <div class="d-flex justify-content-end">
-              <a class="btn btn-outline-success btn-sm mb-2 mr-2" href="./restaurants/{{this._id}}/edit" role="button">修改</a>
-              <form action="./restaurants/{{this._id}}/delete" method="POST" style="display: inline;">
-                <button type="submit" class="btn btn-outline-danger btn-sm mb-2 mr-2">刪除</button>
-              </form>
+              <a class="btn btn-outline-success btn-sm mb-2 mr-2" href="./restaurants/{{this._id}}/edit"
+                role="button">修改</a>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-outline-danger btn-sm mb-2 mr-2" data-toggle="modal"
+                data-target="#exampleModal{{this._id}}">刪除</button>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal{{this._id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">提醒</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      是否確定刪除＜{{this.name}}＞的資料
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                      <form action="/restaurants/{{this._id}}/delete" method="POST" style="display: inline;">
+                        <button type="submit" class="btn btn-primary">確定</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </a>

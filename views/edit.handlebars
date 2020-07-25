@@ -9,11 +9,11 @@
                     <form method="POST" action="/restaurants/{{restaurant._id}}/edit">
                         <div class="form-group form-row">
                             <label for="name" class="col-md-4 col-form-label">
-                                餐廳名稱<small class="text-muted form-text">(必填)</small>
+                                餐廳名稱<small class="form-text text-danger">(必填*)</small>
                             </label>
                             <div class="col-md-8">
                                 <input type="text" placeholder="name" name="name" value="{{restaurant.name}}"
-                                    class="form-control">
+                                    class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group form-row">
@@ -26,30 +26,43 @@
                             </div>
                         </div>
                         <div class="form-group form-row">
-                            <label for="category" class="col-md-4 col-form-label">
-                                餐廳分類<small class="text-muted form-text">(必填)</small>
-                            </label>
+                            <label for="category" class="col-md-4 col-form-label">餐廳類別<small
+                                    class="form-text text-danger">(必填*)</small></label>
                             <div class="col-md-8">
-                                <input type="text" placeholder="category" name="category"
-                                    value="{{restaurant.category}}" class="form-control">
+                                <select id="category" class="form-control" name="category"
+                                    value="{{restaurant.category}}" required>
+                                    {{!-- <option>選擇餐廳類型</option> --}}
+                                    <option value="{{restaurant.category}}">{{restaurant.category}}</option>
+                                    <option value="中式">中式</option>
+                                    <option value="日本料理">日本料理</option>
+                                    <option value="美式">美式</option>
+                                    <option value="泰式料理">泰式料理</option>
+                                    <option value="義式餐廳">義式餐廳</option>
+                                    <option value="中東料理">中東料理</option>
+                                    <option value="異國風味">異國風味</option>
+                                    <option value="吃到飽">吃到飽</option>
+                                    <option value="早午餐">早午餐</option>
+                                    <option value="咖啡">咖啡</option>
+                                    <option value="酒吧">酒吧</option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group form-row">
                             <label for="image" class="col-md-4 col-form-label">
-                                餐廳照片連結<small class="text-muted form-text">(必填)</small>
+                                餐廳照片連結<small class="form-text text-danger">(必填*)</small>
                             </label>
                             <div class="col-md-8">
                                 <input type="text" placeholder="image link" name="image" value="{{restaurant.image}}"
-                                    class="form-control">
+                                    class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group form-row">
                             <label for="location" class="col-md-4 col-form-label">
-                                餐廳地址<small class="text-muted form-text">(必填)</small>
+                                餐廳地址<small class="form-text text-danger">(必填*)</small>
                             </label>
                             <div class="col-md-8">
                                 <input type="text" placeholder="location" name="location"
-                                    value="{{restaurant.location}}" class="form-control">
+                                    value="{{restaurant.location}}" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group form-row">
@@ -72,26 +85,25 @@
                         </div>
                         <div class="form-group form-row">
                             <label for="rating" class="col-md-4 col-form-label">
-                                餐廳評分<small class="text-muted form-text">(必填. 請填入1-5之間的數字)</small>
+                                餐廳評分<small class="form-text text-danger">(必填* 請填入1-5之間的數字)</small>
                             </label>
                             <div class="col-md-8">
                                 <input type="text" placeholder="rating" name="rating" value="{{restaurant.rating}}"
-                                    class="form-control">
+                                    class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group form-row">
                             <label for="description" class="col-md-4 col-form-label">
-                                餐廳描述<small class="text-muted form-text">(必填)</small>
+                                餐廳描述<small class="form-text text-danger">(必填*)</small>
                             </label>
                             <div class="col-md-8">
                                 <input type="text" placeholder="description" name="description"
-                                    value="{{restaurant.description}}" class="form-control">
+                                    value="{{restaurant.description}}" class="form-control" required>
                             </div>
                         </div>
                         <div class="d-flex justify-content-end">
                             <button class="btn btn-success" type="submit">儲存資料</button>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
