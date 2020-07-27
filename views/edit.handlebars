@@ -6,7 +6,7 @@
                 <div class="card-body">
                     <h5 class="card-title">新增一個喜愛的餐廳</h5>
                     <hr>
-                    <form method="POST" action="/restaurants/{{restaurant._id}}/edit">
+                    <form method="POST" action="/restaurants/{{restaurant._id}}?_method=PUT">
                         <div class="form-group form-row">
                             <label for="name" class="col-md-4 col-form-label">
                                 餐廳名稱<small class="form-text text-danger">(必填*)</small>
