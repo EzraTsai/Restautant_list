@@ -2,7 +2,7 @@
 一個使用 Node.js + Express 打造的餐廳美食網站，提供使用者依照餐廳名稱進行搜尋，並可管理自己的餐廳清單，如新增、修改、刪除餐廳資料等功能。
 
 # 專案畫面
-![image](https://github.com/EzraTsai/Restautant_list/blob/master/image/picture1.png)
+![image](https://github.com/EzraTsai/Restautant_list/blob/master/image/picture4.png)
 ![image](https://github.com/EzraTsai/Restautant_list/blob/master/image/picture2.png)
 
 # Features - 產品功能
