@@ -16,6 +16,18 @@
     </div>
   </div>
   <div class="p-2 flex-shrink-1 bd-highlight">
+    <div class="dropdown" style="display: inline">
+      <button class="btn btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        sort
+      </button>
+      <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="/sort/asc">A - Z</a>
+        <a class="dropdown-item" href="/sort/desc">Z - A</a>
+        <a class="dropdown-item" href="/sort/category">分類</a>
+        <a class="dropdown-item" href="/sort/rating">評分</a>
+      </div>
+    </div>
     <a href="./restaurants/new">
       <button class="btn btn-success " type="submit">建立餐廳</button>
     </a>
@@ -50,8 +62,8 @@
               <button type="button" class="btn btn-outline-danger btn-sm mb-2 mr-2" data-toggle="modal"
                 data-target="#exampleModal{{this._id}}">刪除</button>
               <!-- Modal -->
-              <div class="modal fade" id="exampleModal{{this._id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
+              <div class="modal fade" id="exampleModal{{this._id}}" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">

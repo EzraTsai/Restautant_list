@@ -1,20 +1,27 @@
 const express = require('express')
 const router = express.Router()
 const Restaurant = require('../../models/restaurant')
-const restaurantList = require('../../restaurant.json')
 
 router.get('/', (req, res) => {
     Restaurant.find()
         .lean()
         .then(restaurants => res.render('index', { restaurants }))
-        .catch(error => console.log)
+        .catch(error => console.log(error))
 })
 
 //search-bar route setting
 router.get('/search', (req, res) => {
+    // const keyword = req.query.keyword
+    // const restaurants = restaurantList.results.filter(restaurant => {
+    //     return restaurant.name.toLowerCase().includes(keyword.toLowerCase())
+    // })
+    // res.render('index', { restaurants, keyword })
     const keyword = req.query.keyword
-    const restaurants = restaurantList.results.filter(restaurant => restaurant.name.toLowerCase().includes(keyword.toLowerCase()))
-    res.render('index', { restaurants, keyword })
+    Restaurant.find({ name: { $regex: keyword, $options: "i" } })
+        .lean()
+        .sort({ name: 'asc' })
+        .then(restaurants => res.render('index', { restaurants }))
+        .catch(error => console.log(error))
 })
 
 module.exports = router
