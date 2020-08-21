@@ -12,30 +12,6 @@ router.post('/login', passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/users/login'
 }))
-// 登錄的提示
-// router.post("/login", (req, res, next) => {
-//     let { email, password } = req.body
-//     let errors = []
-//     if (!email || !password) {
-//         req.flash('warning_msg', '欄位皆為必填。')
-//         return res.redirect('/users/login')
-//     }
-//     passport.authenticate ('local', function (err, user, info) {
-//         req.logIn(user, (err) => {
-//             console.log(info.message)
-//             console.log(user)
-//             if (err) { 
-//                 if(info.message === "user"){
-//                     errors.push({message: "找不到使用者"});
-//                 }else{
-//                     errors.push({message: "密碼錯誤"});
-//                 }
-//                 return res.render("login", { email, errors });
-//             }
-//             return res.redirect('/')
-//         })
-//     })(req, res, next)
-// })
 
 router.get('/register', (req, res) => {
     res.render('register')
