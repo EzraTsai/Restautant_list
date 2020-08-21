@@ -18,8 +18,11 @@
 * 使用者可以排序所有餐廳
 
 # Environment SetUp - 環境建置
-MongoDB v4.0 以上
-Node.js
+* MongoDB v4.0 以上
+* Node.js: v10.15.0
+* Express: v4.17.1
+* Express-Handlebars: v5.1.0
+* Body-parser: v1.19.0
 
 # Installing - 專案安裝流程
 1. 打開你的 terminal，Clone 此專案至本機電腦  
